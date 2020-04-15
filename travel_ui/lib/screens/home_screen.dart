@@ -57,12 +57,12 @@ class _HomeScreenState extends State<HomeScreen> {
           padding: EdgeInsets.symmetric(vertical: 30.0),
           children: <Widget>[
             Padding(
-              padding: const EdgeInsets.only(left: 20.0, right: 120.0),
+              padding: const EdgeInsets.only(left: 20.0, right: 100.0),
               child: Text(
-                'What would you like to find', 
+                'What would you like to find?', 
               style: TextStyle(
                 fontSize: 30.0, 
-                fontWeight: FontWeight.bold,
+                fontWeight: FontWeight.w800,
               ),),
             ),
             SizedBox(height: 20.0),
