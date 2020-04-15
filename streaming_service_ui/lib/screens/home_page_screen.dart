@@ -14,7 +14,7 @@ class _HomePageScreenState extends State<HomePageScreen> {
       body: SingleChildScrollView(
         child: Column(
           children: <Widget>[
-            HomeScreeTopPart(),
+            HomeScreenTopPart(),
           ],
         ),
       ),
