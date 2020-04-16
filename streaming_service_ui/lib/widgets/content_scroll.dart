@@ -1,11 +1,13 @@
+
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:streaming_service_ui/models/animeListModel.dart';
+import 'package:streaming_service_ui/screens/single_anime_screen.dart';
 
 class ContentScroll extends StatelessWidget {
   const ContentScroll({Key key}) : super(key: key);
 
-  List<Widget> animes() {
+  List<Widget> animes(BuildContext context) {
     List<Widget> animeList = new List();
 
     for (int i = 0; i < animeLists.length; i++) {
@@ -29,11 +31,20 @@ class ContentScroll extends StatelessWidget {
                 borderRadius: BorderRadius.only(
                     topLeft: Radius.circular(20.0),
                     topRight: Radius.circular(20.0)),
-                child: Image.asset(
-                  animeLists[i].imageUrl,
-                  width: double.infinity,
-                  height: 130.0,
-                  fit: BoxFit.cover,
+                child: GestureDetector(
+                  onTap: () => Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (_) => SingleAnimeScreen(
+                          anime: animeLists[i],
+                        ),
+                      )),
+                  child: Image.asset(
+                    animeLists[i].imageUrl,
+                    width: double.infinity,
+                    height: 130.0,
+                    fit: BoxFit.cover,
+                  ),
                 ),
               ),
               Padding(
@@ -92,7 +103,7 @@ class ContentScroll extends StatelessWidget {
               padding: EdgeInsets.only(left: 30.0, right: 0.0),
               child: ListView(
                 scrollDirection: Axis.horizontal,
-                children: animes(),
+                children: animes(context),
               ),
             ),
           ),
@@ -123,17 +134,15 @@ class ContentScroll extends StatelessWidget {
             ),
           ),
           Container(
-           
-            
-              height: 250.0,
-              child: Padding(
-                padding: EdgeInsets.only(left: 30.0, right: 0.0),
-                child: ListView(
-                  scrollDirection: Axis.horizontal,
-                  children: animes(),
-                ),
+            height: 250.0,
+            child: Padding(
+              padding: EdgeInsets.only(left: 30.0, right: 0.0),
+              child: ListView(
+                scrollDirection: Axis.horizontal,
+                children: animes(context),
               ),
             ),
+          ),
           Padding(
             padding: EdgeInsets.symmetric(horizontal: 40.0),
             child: Row(
@@ -163,7 +172,7 @@ class ContentScroll extends StatelessWidget {
               padding: EdgeInsets.only(left: 30.0, right: 0.0),
               child: ListView(
                 scrollDirection: Axis.horizontal,
-                children: animes(),
+                children: animes(context),
               ),
             ),
           ),
