@@ -89,7 +89,7 @@ class ContentScroll extends StatelessWidget {
           Container(
             height: 250.0,
             child: Padding(
-              padding: EdgeInsets.symmetric(horizontal: 30.0),
+              padding: EdgeInsets.only(left: 30.0, right: 0.0),
               child: ListView(
                 scrollDirection: Axis.horizontal,
                 children: animes(),
@@ -127,7 +127,7 @@ class ContentScroll extends StatelessWidget {
             
               height: 250.0,
               child: Padding(
-                padding: EdgeInsets.symmetric(horizontal: 40.0),
+                padding: EdgeInsets.only(left: 30.0, right: 0.0),
                 child: ListView(
                   scrollDirection: Axis.horizontal,
                   children: animes(),
@@ -160,7 +160,7 @@ class ContentScroll extends StatelessWidget {
           Container(
             height: 250.0,
             child: Padding(
-              padding: EdgeInsets.symmetric(horizontal: 40.0),
+              padding: EdgeInsets.only(left: 30.0, right: 0.0),
               child: ListView(
                 scrollDirection: Axis.horizontal,
                 children: animes(),
