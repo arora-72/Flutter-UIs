@@ -15,16 +15,6 @@ class _SingleAnimeScreenState extends State<SingleAnimeScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
-      // appBar: AppBar(
-      //   backgroundColor: Colors.white,
-      //   elevation: 5.0,
-      //   title: Text(
-      //     widget.anime.title,
-      //     style: TextStyle(
-      //       color: Colors.red,
-      //     ),
-      //   ),
-      // ),
       body: ListView(
         children: <Widget>[
           Stack(
@@ -49,21 +39,31 @@ class _SingleAnimeScreenState extends State<SingleAnimeScreen> {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: <Widget>[
-                  IconButton(
-                    padding: EdgeInsets.only(left: 30.0),
-                    onPressed: () => Navigator.pop(context),
-                    icon: Icon(Icons.arrow_back),
-                    iconSize: 30.0,
-                    color: Colors.black,
+                  Padding(
+                    padding: EdgeInsets.symmetric(horizontal: 20.0),
+                    child: CircleAvatar(
+                        radius: 25,
+                        backgroundColor: Colors.white54,
+                        child: IconButton(
+                          onPressed: () => Navigator.pop(context),
+                          icon: Icon(Icons.arrow_back),
+                          color: Colors.black,
+                        )),
                   ),
-                  IconButton(
-                    hoverColor: Colors.white,
-                    padding: EdgeInsets.only(left: 30.0, right: 20.0),
-                    onPressed: () => print('Add to Favourites'),
-                    icon: Icon(Icons.favorite_border),
-                    iconSize: 30.0,
-                    color: Colors.black,
-                  )
+                  Padding(
+                    padding:  EdgeInsets.symmetric(horizontal: 20.0),
+                    child: CircleAvatar(
+                      radius: 25,
+                      backgroundColor: Colors.white54,
+                      child: IconButton(
+                        hoverColor: Colors.white,
+                        onPressed: () => print('Add to Favourites'),
+                        icon: Icon(Icons.favorite_border),
+                        iconSize: 30.0,
+                        color: Colors.black,
+                      ),
+                    ),
+                  ),
                 ],
               ),
             ],
