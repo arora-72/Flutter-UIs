@@ -1,5 +1,6 @@
 
 import 'package:flutter/material.dart';
+import 'package:streaming_service_ui/widgets/home_screen_botton_widget.dart';
 import 'package:streaming_service_ui/widgets/home_screen_top_widget.dart';
 
 class HomePageScreen extends StatefulWidget {
@@ -15,6 +16,7 @@ class _HomePageScreenState extends State<HomePageScreen> {
         child: Column(
           children: <Widget>[
             HomeScreenTopPart(),
+            BottomPartHomeScreen(),
           ],
         ),
       ),

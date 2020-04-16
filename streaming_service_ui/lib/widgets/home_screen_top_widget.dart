@@ -11,7 +11,7 @@ final List<String> imgList = [
   'https://news.otakukart.com/wp-content/uploads/2019/11/aoNWY72_700b.jpg',
   'https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTIYevab17y8Xqz0n9GD4Rjj_KL24LU3CUT99MLOizLY-3N-HsZ&usqp=CAU',
   'https://vignette.wikia.nocookie.net/naruto/images/2/27/Kakashi_Hatake.png/revision/latest?cb=20170628120149',
-  'https://qph.fs.quoracdn.net/main-qimg-84ab05144ece30bab213f4d9669ccb23.webp',
+  'https://i.pinimg.com/236x/ed/36/c7/ed36c733397751e7411d959fdb71eeff.jpg',
   'https://upload.wikimedia.org/wikipedia/en/thumb/9/9f/Bakuman_Vol_1_Cover.jpg/220px-Bakuman_Vol_1_Cover.jpg',
   'https://i.ebayimg.com/images/g/bqUAAOSwAxpdrz5d/s-l300.jpg'
   ];
