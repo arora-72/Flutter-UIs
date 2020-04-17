@@ -13,6 +13,6 @@ class MESSAGES {
  
 class COLORS {
   // App Colors //
-  static const Color DRAWER_BG_COLOR = Colors.lightGreen;
-  static const Color APP_THEME_COLOR = Colors.green;
+  static const Color DRAWER_BG_COLOR =  Color.fromRGBO(58, 66, 86, 1.0);
+  static const Color APP_THEME_COLOR = Color.fromRGBO(58, 66, 86, 1.0);
 }

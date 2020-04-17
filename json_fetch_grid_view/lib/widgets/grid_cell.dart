@@ -28,7 +28,7 @@ class GridCell extends StatelessWidget {
                 top.title,
                 textAlign: TextAlign.center,
                 overflow: TextOverflow.ellipsis,
-                style: TextStyle(fontWeight: FontWeight.w500),
+                style: TextStyle(fontWeight: FontWeight.w500, color: Colors.white),
               ),
             ),
           ],
