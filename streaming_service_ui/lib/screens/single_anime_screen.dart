@@ -1,13 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:streaming_service_ui/models/animeListModel.dart';
+import 'package:streaming_service_ui/models/top_anime_model.dart';
 import 'package:streaming_service_ui/widgets/circular_clipper.dart';
 
 class SingleAnimeScreen extends StatefulWidget {
   @override
   _SingleAnimeScreenState createState() => _SingleAnimeScreenState();
 
-  final AnimeListModel anime;
-  SingleAnimeScreen({this.anime});
+  final Top top;
+  SingleAnimeScreen({this.top});
 }
 
 class _SingleAnimeScreenState extends State<SingleAnimeScreen> {
@@ -22,15 +23,15 @@ class _SingleAnimeScreenState extends State<SingleAnimeScreen> {
               Container(
                 transform: Matrix4.translationValues(0.0, -50.0, 0.0),
                 child: Hero(
-                  tag: widget.anime.imageUrl,
+                  tag: widget.top.imageUrl,
                   child: ClipShadowPath(
                     clipper: CircularClipper(),
                     shadow: Shadow(blurRadius: 20.0),
-                    child: Image(
-                      height: 400.0,
-                      width: double.infinity,
-                      fit: BoxFit.cover,
-                      image: AssetImage(widget.anime.imageUrl),
+                    child: Image.network(
+                       widget.top.imageUrl,
+                       height: 400.0,
+                       width: double.infinity,
+                       fit: BoxFit.cover,
                     ),
                   ),
                 ),
@@ -107,7 +108,7 @@ class _SingleAnimeScreenState extends State<SingleAnimeScreen> {
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: <Widget>[
                   Text(
-                    widget.anime.title.toUpperCase(),
+                    widget.top.title.toUpperCase(),
                     style: TextStyle(
                       fontSize: 20.0,
                       fontWeight: FontWeight.bold,
@@ -126,7 +127,7 @@ class _SingleAnimeScreenState extends State<SingleAnimeScreen> {
                   ),
                   SizedBox(height: 10.0),
                   Text(
-                    '⭐️ ⭐️ ⭐️ ⭐️',
+                    "Score: ${widget.top.score}",
                     style: TextStyle(fontSize: 25.0),
                   ),
                   SizedBox(height: 15.0),
@@ -136,7 +137,7 @@ class _SingleAnimeScreenState extends State<SingleAnimeScreen> {
                       Column(
                         children: <Widget>[
                           Text(
-                            'Year',
+                            'Start Date',
                             style: TextStyle(
                               color: Colors.black54,
                               fontSize: 16.0,
@@ -144,7 +145,7 @@ class _SingleAnimeScreenState extends State<SingleAnimeScreen> {
                           ),
                           SizedBox(height: 2.0),
                           Text(
-                            '2012',
+                            widget.top.startDate,
                             style: TextStyle(
                               fontSize: 20.0,
                               fontWeight: FontWeight.w600,
@@ -155,7 +156,7 @@ class _SingleAnimeScreenState extends State<SingleAnimeScreen> {
                       Column(
                         children: <Widget>[
                           Text(
-                            'Country',
+                            'Type',
                             style: TextStyle(
                               color: Colors.black54,
                               fontSize: 16.0,
@@ -163,7 +164,7 @@ class _SingleAnimeScreenState extends State<SingleAnimeScreen> {
                           ),
                           SizedBox(height: 2.0),
                           Text(
-                            'Japan',
+                            widget.top.type.toString().split(".")[1],
                             style: TextStyle(
                               fontSize: 20.0,
                               fontWeight: FontWeight.w600,
@@ -174,7 +175,7 @@ class _SingleAnimeScreenState extends State<SingleAnimeScreen> {
                       Column(
                         children: <Widget>[
                           Text(
-                            'Seasons',
+                            'Episodes',
                             style: TextStyle(
                               color: Colors.black54,
                               fontSize: 16.0,
@@ -182,7 +183,7 @@ class _SingleAnimeScreenState extends State<SingleAnimeScreen> {
                           ),
                           SizedBox(height: 2.0),
                           Text(
-                            '3',
+                            widget.top.episodes.toString(),
                             style: TextStyle(
                               fontSize: 20.0,
                               fontWeight: FontWeight.w600,
@@ -199,7 +200,7 @@ class _SingleAnimeScreenState extends State<SingleAnimeScreen> {
                     height: 120.0,
                     child: SingleChildScrollView(
                       child: Text(
-                        widget.anime.description,
+                        widget.top.title + widget.top.imageUrl,
                         style: TextStyle(
                           color: Colors.black54,
                         ),

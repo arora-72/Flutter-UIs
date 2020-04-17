@@ -1,14 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:streaming_service_ui/models/animeListModel.dart';
+import 'package:streaming_service_ui/models/top_anime_model.dart';
 import 'package:streaming_service_ui/screens/single_anime_screen.dart';
 
 class HorizontalContentScroll extends StatelessWidget {
   final String listTitle;
-  final List<AnimeListModel> animeLists;
+  final List<Top> topAnimeLists;
 
   HorizontalContentScroll({
     this.listTitle,
-    this.animeLists,
+    this.topAnimeLists
   });
 
   @override
@@ -82,12 +83,13 @@ List<Widget> contentScroll(BuildContext context) {
                     context,
                     MaterialPageRoute(
                       builder: (_) => SingleAnimeScreen(
-                        anime: animeLists[i],
+                        top: topAnimeLists[i],
                       ),
                     )),
-                child: Image.asset(
-                  animeLists[i].imageUrl,
-                  width: double.infinity,
+                    
+                child: Image.network(
+                  topAnimeLists[i].imageUrl,
+                   width: double.infinity,
                   height: 130.0,
                   fit: BoxFit.cover,
                 ),
@@ -95,7 +97,10 @@ List<Widget> contentScroll(BuildContext context) {
             ),
             Padding(
               padding: const EdgeInsets.only(top: 4.0, left: 8.0, right: 8.0),
-              child: Text(animeLists[i].title,
+              child: Text(topAnimeLists[i].title,
+              maxLines: 2,
+              overflow: TextOverflow.ellipsis,
+              softWrap: true,
                   textAlign: TextAlign.center,
                   style: TextStyle(
                       fontSize: 16.0,
@@ -104,7 +109,7 @@ List<Widget> contentScroll(BuildContext context) {
             ),
             Padding(
               padding: EdgeInsets.only(top: 3.0),
-              child: Text(i == 0 ? "Season 2" : ""),
+              child: Text(topAnimeLists[i].rank.toString()),
             )
           ],
         ),
